@@ -51,6 +51,15 @@ body {
   color: var(--text);
   cursor: pointer;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 .logo span { color: var(--accent); }
 
