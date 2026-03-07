@@ -13,7 +13,7 @@
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
 
-  <!-- ✅ OPEN GRAPH (WhatsApp / Facebook preview) -->
+  <!-- ✅ OPEN GRAPH -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AK Next Gen Tech – Project Development & Guidance" />
   <meta property="og:description" content="End-to-end final year project guidance – development, documentation, viva prep & deployment. Affordable pricing for students." />
@@ -27,14 +27,12 @@
   <meta name="twitter:description" content="End-to-end final year project guidance – development, documentation, viva prep & deployment." />
   <meta name="twitter:image" content="images/AKlogo.jpeg" />
 
-  <!-- ✅ FAVICON / LOGO TAB ICON -->
+  <!-- ✅ FAVICON -->
   <link rel="icon" type="image/png" href="images/AKlogo.jpeg" />
   <link rel="apple-touch-icon" href="images/AKlogo.jpeg" />
-
-  <!-- ✅ CANONICAL URL -->
   <link rel="canonical" href="https://aknextgentech.netlify.app" />
 
-  <!-- ✅ GOOGLE STRUCTURED DATA (Rich Results) -->
+  <!-- ✅ STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,9 +42,7 @@
     "url": "https://aknextgentech.netlify.app",
     "telephone": "+916381084514",
     "email": "aknextgentech6393@gmail.com",
-    "sameAs": [
-      "https://www.instagram.com/aknextgen.tech"
-    ],
+    "sameAs": ["https://www.instagram.com/aknextgen.tech/"],
     "serviceType": ["Project Development", "Documentation", "Viva Preparation", "Deployment Support"],
     "areaServed": "India",
     "priceRange": "₹299 - ₹5999"
@@ -54,118 +50,243 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="images/AKlogo.jpeg" alt="AK Next Gen Tech Logo" class="logo-img" onerror="this.style.display='none'" />
-      AK Next Gen <span>Tech</span>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="progress-bar"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <a href="#home" class="logo">
+    <img src="images/AKlogo.jpeg" alt="AK Next Gen Tech Logo" class="logo-img" onerror="this.style.display='none'" />
+    AK Next Gen <span>Tech</span>
+  </a>
+  <nav class="nav-links" id="nav-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance" target="_blank" class="nav-cta">Get Started →</a>
+  </nav>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    🎓 Final Year Project Experts
+  </div>
+
+  <h1>
+    <div class="h1-line"><span class="h1-inner">Build Projects</span></div>
+    <div class="h1-line"><span class="h1-inner gradient-text">That Actually</span></div>
+    <div class="h1-line"><span class="h1-inner">Impress.</span></div>
+  </h1>
+
+  <p class="hero-sub">Industry-level guidance from real IT professionals.<br>End-to-end development · Documentation · Viva Training.</p>
+
+  <div class="hero-btns">
+    <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance" target="_blank" class="btn btn-whatsapp large">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat on WhatsApp
+    </a>
+    <a href="#services" class="btn btn-ghost large">Explore Services ↓</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">50+</span>
+      <div class="stat-label">Projects Done</div>
     </div>
-    <nav class="nav-links" id="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">2+</span>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <div class="stat-label">Viva Ready</div>
+    </div>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-badge">🎓 Final Year Project Experts</div>
-    <h1>Build Projects That<br><span class="gradient-text">Actually Impress.</span></h1>
-    <p class="hero-sub">Industry-level guidance from real IT professionals.<br>End-to-end development · Documentation · Viva Training.</p>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
 
-    <div class="hero-btns">
-      <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance" target="_blank" class="btn btn-whatsapp">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-      <a href="https://www.instagram.com/aknextgen.tech?igsh=MXMxcmVpc2I1MmY3Ng==" target="_blank" class="btn btn-instagram">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        Instagram
-      </a>
-      <a href="/cdn-cgi/l/email-protection#b2d3d9dcd7cac6d5d7dcc6d7d1da84818b81f2d5dfd3dbde9cd1dddf" class="btn btn-email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email Us
-      </a>
+<!-- TECH STRIP -->
+<div class="tech-strip">
+  <div class="tech-strip-inner" id="techStrip">
+    <span class="tech-item"><span>💻</span> HTML</span>
+    <span class="tech-item"><span>🎨</span> CSS</span>
+    <span class="tech-item"><span>💻</span> JavaScript</span>
+    <span class="tech-item"><span>⚛️</span> React</span>
+    <span class="tech-item"><span>💻</span> Java</span>
+    <span class="tech-item"><span>🗄️</span> Mysql</span> 
+    <span class="tech-item"><span>🐍</span> Python</span>
+    <span class="tech-item"><span>🟢</span> Node.js</span>
+    <span class="tech-item"><span>🤖</span> Machine Learning</span>
+    <span class="tech-item"><span>☁️</span> Cloud Deploy</span>
+    <span class="tech-item"><span>📄</span> IEEE Docs</span>
+    <span class="tech-item"><span>🗄️</span> MongoDB</span>
+    <span class="tech-item"><span>🔥</span> Firebase</span>
+    <span class="tech-item"><span>🐳</span> Docker</span>
+    <span class="tech-item"><span>🚀</span> Vercel</span>
+    <span class="tech-item"><span>🌐</span> Full Stack</span>
+    <span class="tech-item"><span>📊</span> Data Science</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="tech-item"><span>💻</span> HTML</span>
+    <span class="tech-item"><span>🎨</span> CSS</span>
+    <span class="tech-item"><span>💻</span> JavaScript</span>
+    <span class="tech-item"><span>⚛️</span> React</span>
+    <span class="tech-item"><span>💻</span> Java</span>
+    <span class="tech-item"><span>🗄️</span> Mysql</span>
+    <span class="tech-item"><span>🐍</span> Python</span>
+    <span class="tech-item"><span>🟢</span> Node.js</span>
+    <span class="tech-item"><span>🤖</span> Machine Learning</span>
+    <span class="tech-item"><span>☁️</span> Cloud Deploy</span>
+    <span class="tech-item"><span>📄</span> IEEE Docs</span>
+    <span class="tech-item"><span>🗄️</span> MongoDB</span>
+    <span class="tech-item"><span>🔥</span> Firebase</span>
+    <span class="tech-item"><span>🐳</span> Docker</span>
+    <span class="tech-item"><span>🚀</span> Vercel</span>
+    <span class="tech-item"><span>🌐</span> Full Stack</span>
+    <span class="tech-item"><span>📊</span> Data Science</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-head" data-aos="fade-up">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">Complete end-to-end support — from ideation to successful submission. We've got you covered every step of the way.</p>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat"><span>10+</span>Projects Done</div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span>2+</span>Years Experience</div>
-      <div class="stat-divider"></div>
-      <div class="stat"><span>100%</span>Viva Ready</div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-label">What We Offer</div>
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">💡</div>
+    <div class="cards-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-number">01</div>
+        <div class="card-icon-wrap">💡</div>
         <h3>Project Idea Selection</h3>
         <p>We help you pick a unique, industry-relevant topic that stands out in evaluation.</p>
+        <div class="card-arrow">→</div>
       </div>
-      <div class="card">
-        <div class="card-icon">⚙️</div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="card-number">02</div>
+        <div class="card-icon-wrap">⚙️</div>
         <h3>Full Project Development</h3>
         <p>Complete end-to-end coding using real tech stacks — React, Node, Python, ML, and more.</p>
+        <div class="card-arrow">→</div>
       </div>
-      <div class="card">
-        <div class="card-icon">📄</div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="card-number">03</div>
+        <div class="card-icon-wrap">📄</div>
         <h3>Documentation &amp; PPT</h3>
         <p>Professional IEEE-format documentation and presentation slides ready for submission.</p>
+        <div class="card-arrow">→</div>
       </div>
-      <div class="card">
-        <div class="card-icon">🎤</div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-number">04</div>
+        <div class="card-icon-wrap">🎤</div>
         <h3>Viva Preparation</h3>
         <p>We train you to confidently explain your project with mock Q&amp;A and concept clarity.</p>
+        <div class="card-arrow">→</div>
       </div>
-      <div class="card">
-        <div class="card-icon">🚀</div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="card-number">05</div>
+        <div class="card-icon-wrap">🚀</div>
         <h3>Deployment Support</h3>
         <p>Live deployment on cloud platforms so your project is actually accessible online.</p>
+        <div class="card-arrow">→</div>
       </div>
-      <div class="card">
-        <div class="card-icon">🔧</div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="card-number">06</div>
+        <div class="card-icon-wrap">🔧</div>
         <h3>Bug Fixing &amp; Support</h3>
         <p>Post-delivery support to fix issues and answer doubts before your submission date.</p>
+        <div class="card-arrow">→</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-inner">
-      <div class="section-label">Who We Are</div>
-      <h2>Built by Working Professionals,<br>Made for Students.</h2>
-      <p>AK Next Gen Tech was founded by IT professionals with 2+ years of hands-on industry experience. We understand what examiners look for and what real-world projects should look like.</p>
-      <p>We don't just deliver code — we make sure <strong>you understand it</strong>, can defend it, and walk away with real knowledge.</p>
-      <ul class="about-points">
-        <li>✅ Real industry-standard code quality</li>
-        <li>✅ Complete handholding from idea to viva</li>
-        <li>✅ Affordable pricing for students</li>
-        <li>✅ Fast turnaround, responsive support</li>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text" data-aos="fade-right">
+      <div class="section-eyebrow">Who We Are</div>
+      <h2 class="section-title">Built by Working<br>Professionals,<br>Made for Students.</h2>
+      <p class="section-sub">AK Next Gen Tech was founded by IT professionals with 2+ years of hands-on industry experience. We understand what examiners look for and what real-world projects should look like.</p>
+      <p class="section-sub" style="margin-top:16px;">We don't just deliver code — we make sure <strong style="color:var(--text)">you understand it</strong>, can defend it, and walk away with real knowledge.</p>
+      <ul class="about-points" style="margin-top:32px;">
+        <li><span class="point-check">✓</span> Real industry-standard code quality</li>
+        <li><span class="point-check">✓</span> Complete handholding from idea to viva</li>
+        <li><span class="point-check">✓</span> Affordable pricing for students</li>
+        <li><span class="point-check">✓</span> Fast turnaround, responsive support</li>
       </ul>
     </div>
-  </section>
 
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="section-label">Transparent Pricing</div>
-    <h2>Choose Your Plan</h2>
-    <p class="pricing-sub">All plans include WhatsApp support. Need something custom? Just ask!</p>
+    <div class="about-visual" data-aos="fade-left">
+      <div class="about-card-stack">
+        <div class="stack-card stack-card-1">
+          <div class="stack-card-icon">⚙️</div>
+          <div class="stack-card-body">
+            <div class="stack-card-label">Service</div>
+            <div class="stack-card-title">Full Stack Development</div>
+            <div class="stack-card-text">React, Node.js, Python — production-grade code</div>
+          </div>
+        </div>
+        <div class="stack-card stack-card-2">
+          <div class="stack-card-icon">🎤</div>
+          <div class="stack-card-body">
+            <div class="stack-card-label">Support</div>
+            <div class="stack-card-title">Viva Preparation</div>
+            <div class="stack-card-text">Mock sessions + concept clarity</div>
+          </div>
+        </div>
+        <div class="stack-card stack-card-3">
+          <div class="stack-card-icon">🏆</div>
+          <div class="stack-card-body">
+            <div class="stack-card-label">Result</div>
+            <div class="stack-card-title">100% Viva Ready</div>
+            <div class="stack-card-text">Confident, prepared, impressive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div data-aos="fade-up">
+      <div class="section-eyebrow">Transparent Pricing</div>
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="section-sub" style="margin:0 auto 0;color:var(--muted)">All plans include WhatsApp support. Need something custom? Just ask!</p>
+    </div>
 
     <div class="pricing-tabs">
       <button class="tab active" onclick="showCategory('dev', this)">⚙️ Project Development</button>
@@ -176,203 +297,207 @@
 
     <!-- PROJECT DEVELOPMENT -->
     <div class="pricing-grid active" id="cat-dev">
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-tier">Basic</div>
         <div class="plan-price">₹1,999</div>
         <div class="plan-desc">Small project, single module</div>
         <ul class="plan-features">
-          <li>✅ 1 Module / Feature</li>
-          <li>✅ Basic Tech Stack</li>
-          <li>✅ Source Code Delivery</li>
-          <li>✅ 1 Revision</li>
-          <li>❌ Deployment</li>
-          <li>❌ Documentation</li>
+          <li class="has"><span class="feat-icon">✅</span> 1 Module / Feature</li>
+          <li class="has"><span class="feat-icon">✅</span> Basic Tech Stack</li>
+          <li class="has"><span class="feat-icon">✅</span> Source Code Delivery</li>
+          <li class="has"><span class="feat-icon">✅</span> 1 Revision</li>
+          <li><span class="feat-icon">❌</span> Deployment</li>
+          <li><span class="feat-icon">❌</span> Documentation</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Project%20Development%20%E2%82%B91999" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Project%20Development%20%E2%82%B91999" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
-      <div class="price-card popular">
+      <div class="price-card popular" data-aos="fade-up" data-aos-delay="100">
         <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
+        <div class="plan-tier">Standard</div>
         <div class="plan-price">₹3,499</div>
         <div class="plan-desc">Full project, multiple modules</div>
         <ul class="plan-features">
-          <li>✅ 3–5 Modules</li>
-          <li>✅ Modern Tech Stack</li>
-          <li>✅ Source Code + DB</li>
-          <li>✅ 3 Revisions</li>
-          <li>✅ Basic Deployment</li>
-          <li>❌ Full Documentation</li>
+          <li class="has"><span class="feat-icon">✅</span> 3–5 Modules</li>
+          <li class="has"><span class="feat-icon">✅</span> Modern Tech Stack</li>
+          <li class="has"><span class="feat-icon">✅</span> Source Code + DB</li>
+          <li class="has"><span class="feat-icon">✅</span> 3 Revisions</li>
+          <li class="has"><span class="feat-icon">✅</span> Basic Deployment</li>
+          <li><span class="feat-icon">❌</span> Full Documentation</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Project%20Development%20%E2%82%B93499" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Project%20Development%20%E2%82%B93499" target="_blank" class="btn btn-primary">💬 Get Started</a>
       </div>
-      <div class="price-card">
-        <div class="plan-name">Premium</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-tier">Premium</div>
         <div class="plan-price">₹5,999</div>
         <div class="plan-desc">Industry-level complete project</div>
         <ul class="plan-features">
-          <li>✅ Unlimited Modules</li>
-          <li>✅ Industry Tech Stack</li>
-          <li>✅ Source Code + DB + API</li>
-          <li>✅ Unlimited Revisions</li>
-          <li>✅ Full Deployment</li>
-          <li>✅ Documentation + PPT</li>
+          <li class="has"><span class="feat-icon">✅</span> Unlimited Modules</li>
+          <li class="has"><span class="feat-icon">✅</span> Industry Tech Stack</li>
+          <li class="has"><span class="feat-icon">✅</span> Source Code + DB + API</li>
+          <li class="has"><span class="feat-icon">✅</span> Unlimited Revisions</li>
+          <li class="has"><span class="feat-icon">✅</span> Full Deployment</li>
+          <li class="has"><span class="feat-icon">✅</span> Documentation + PPT</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Project%20Development%20%E2%82%B95999" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Project%20Development%20%E2%82%B95999" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
     </div>
 
     <!-- DOCUMENTATION & PPT -->
     <div class="pricing-grid" id="cat-doc">
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-tier">Basic</div>
         <div class="plan-price">₹499</div>
         <div class="plan-desc">Simple report + slides</div>
         <ul class="plan-features">
-          <li>✅ 10–15 Page Report</li>
-          <li>✅ 10 Slide PPT</li>
-          <li>✅ Standard Format</li>
-          <li>✅ 1 Revision</li>
-          <li>❌ IEEE Format</li>
-          <li>❌ Abstract &amp; References</li>
+          <li class="has"><span class="feat-icon">✅</span> 10–15 Page Report</li>
+          <li class="has"><span class="feat-icon">✅</span> 10 Slide PPT</li>
+          <li class="has"><span class="feat-icon">✅</span> Standard Format</li>
+          <li class="has"><span class="feat-icon">✅</span> 1 Revision</li>
+          <li><span class="feat-icon">❌</span> IEEE Format</li>
+          <li><span class="feat-icon">❌</span> Abstract &amp; References</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Documentation%20%E2%82%B9499" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Documentation%20%E2%82%B9499" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
-      <div class="price-card popular">
+      <div class="price-card popular" data-aos="fade-up" data-aos-delay="100">
         <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
+        <div class="plan-tier">Standard</div>
         <div class="plan-price">₹999</div>
         <div class="plan-desc">Professional report + slides</div>
         <ul class="plan-features">
-          <li>✅ 25–35 Page Report</li>
-          <li>✅ 20 Slide PPT</li>
-          <li>✅ IEEE Format</li>
-          <li>✅ 3 Revisions</li>
-          <li>✅ Abstract &amp; References</li>
-          <li>❌ Plagiarism Check</li>
+          <li class="has"><span class="feat-icon">✅</span> 25–35 Page Report</li>
+          <li class="has"><span class="feat-icon">✅</span> 20 Slide PPT</li>
+          <li class="has"><span class="feat-icon">✅</span> IEEE Format</li>
+          <li class="has"><span class="feat-icon">✅</span> 3 Revisions</li>
+          <li class="has"><span class="feat-icon">✅</span> Abstract &amp; References</li>
+          <li><span class="feat-icon">❌</span> Plagiarism Check</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Documentation%20%E2%82%B9999" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Documentation%20%E2%82%B9999" target="_blank" class="btn btn-primary">💬 Get Started</a>
       </div>
-      <div class="price-card">
-        <div class="plan-name">Premium</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-tier">Premium</div>
         <div class="plan-price">₹1,499</div>
         <div class="plan-desc">Full IEEE + plagiarism free</div>
         <ul class="plan-features">
-          <li>✅ 40–60 Page Report</li>
-          <li>✅ 30 Slide PPT</li>
-          <li>✅ Full IEEE Format</li>
-          <li>✅ Unlimited Revisions</li>
-          <li>✅ Abstract &amp; References</li>
-          <li>✅ Plagiarism Check</li>
+          <li class="has"><span class="feat-icon">✅</span> 40–60 Page Report</li>
+          <li class="has"><span class="feat-icon">✅</span> 30 Slide PPT</li>
+          <li class="has"><span class="feat-icon">✅</span> Full IEEE Format</li>
+          <li class="has"><span class="feat-icon">✅</span> Unlimited Revisions</li>
+          <li class="has"><span class="feat-icon">✅</span> Abstract &amp; References</li>
+          <li class="has"><span class="feat-icon">✅</span> Plagiarism Check</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Documentation%20%E2%82%B91499" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Documentation%20%E2%82%B91499" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
     </div>
 
     <!-- VIVA PREPARATION -->
     <div class="pricing-grid" id="cat-viva">
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-tier">Basic</div>
         <div class="plan-price">₹299</div>
         <div class="plan-desc">Quick viva overview</div>
         <ul class="plan-features">
-          <li>✅ 1 Mock Session (30 min)</li>
-          <li>✅ Top 20 Questions</li>
-          <li>✅ Written Answers PDF</li>
-          <li>❌ Live Q&amp;A Practice</li>
-          <li>❌ Concept Explanation</li>
-          <li>❌ Follow-up Session</li>
+          <li class="has"><span class="feat-icon">✅</span> 1 Mock Session (30 min)</li>
+          <li class="has"><span class="feat-icon">✅</span> Top 20 Questions</li>
+          <li class="has"><span class="feat-icon">✅</span> Written Answers PDF</li>
+          <li><span class="feat-icon">❌</span> Live Q&amp;A Practice</li>
+          <li><span class="feat-icon">❌</span> Concept Explanation</li>
+          <li><span class="feat-icon">❌</span> Follow-up Session</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Viva%20Preparation%20%E2%82%B9299" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Viva%20Preparation%20%E2%82%B9299" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
-      <div class="price-card popular">
+      <div class="price-card popular" data-aos="fade-up" data-aos-delay="100">
         <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
+        <div class="plan-tier">Standard</div>
         <div class="plan-price">₹599</div>
         <div class="plan-desc">Full mock viva + Q&amp;A</div>
         <ul class="plan-features">
-          <li>✅ 2 Mock Sessions (1 hr)</li>
-          <li>✅ 40+ Questions</li>
-          <li>✅ Written Answers PDF</li>
-          <li>✅ Live Q&amp;A Practice</li>
-          <li>✅ Concept Explanation</li>
-          <li>❌ Follow-up Session</li>
+          <li class="has"><span class="feat-icon">✅</span> 2 Mock Sessions (1 hr)</li>
+          <li class="has"><span class="feat-icon">✅</span> 40+ Questions</li>
+          <li class="has"><span class="feat-icon">✅</span> Written Answers PDF</li>
+          <li class="has"><span class="feat-icon">✅</span> Live Q&amp;A Practice</li>
+          <li class="has"><span class="feat-icon">✅</span> Concept Explanation</li>
+          <li><span class="feat-icon">❌</span> Follow-up Session</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Viva%20Preparation%20%E2%82%B9599" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Viva%20Preparation%20%E2%82%B9599" target="_blank" class="btn btn-primary">💬 Get Started</a>
       </div>
-      <div class="price-card">
-        <div class="plan-name">Premium</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-tier">Premium</div>
         <div class="plan-price">₹999</div>
         <div class="plan-desc">Complete viva mastery</div>
         <ul class="plan-features">
-          <li>✅ 3 Mock Sessions</li>
-          <li>✅ 60+ Questions</li>
-          <li>✅ Written Answers PDF</li>
-          <li>✅ Live Q&amp;A Practice</li>
-          <li>✅ Deep Concept Clarity</li>
-          <li>✅ Follow-up Session</li>
+          <li class="has"><span class="feat-icon">✅</span> 3 Mock Sessions</li>
+          <li class="has"><span class="feat-icon">✅</span> 60+ Questions</li>
+          <li class="has"><span class="feat-icon">✅</span> Written Answers PDF</li>
+          <li class="has"><span class="feat-icon">✅</span> Live Q&amp;A Practice</li>
+          <li class="has"><span class="feat-icon">✅</span> Deep Concept Clarity</li>
+          <li class="has"><span class="feat-icon">✅</span> Follow-up Session</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Viva%20Preparation%20%E2%82%B9999" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Viva%20Preparation%20%E2%82%B9999" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
     </div>
 
     <!-- DEPLOYMENT SUPPORT -->
     <div class="pricing-grid" id="cat-deploy">
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="plan-tier">Basic</div>
         <div class="plan-price">₹399</div>
         <div class="plan-desc">Simple static deployment</div>
         <ul class="plan-features">
-          <li>✅ GitHub Pages / Netlify</li>
-          <li>✅ Frontend Only</li>
-          <li>✅ Free Domain (.github.io)</li>
-          <li>❌ Backend Deployment</li>
-          <li>❌ Custom Domain</li>
-          <li>❌ SSL Setup</li>
+          <li class="has"><span class="feat-icon">✅</span> GitHub Pages / Netlify</li>
+          <li class="has"><span class="feat-icon">✅</span> Frontend Only</li>
+          <li class="has"><span class="feat-icon">✅</span> Free Domain (.github.io)</li>
+          <li><span class="feat-icon">❌</span> Backend Deployment</li>
+          <li><span class="feat-icon">❌</span> Custom Domain</li>
+          <li><span class="feat-icon">❌</span> SSL Setup</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Deployment%20%E2%82%B9399" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Basic%20Deployment%20%E2%82%B9399" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
-      <div class="price-card popular">
+      <div class="price-card popular" data-aos="fade-up" data-aos-delay="100">
         <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
+        <div class="plan-tier">Standard</div>
         <div class="plan-price">₹799</div>
         <div class="plan-desc">Full stack cloud deployment</div>
         <ul class="plan-features">
-          <li>✅ Render / Railway / Vercel</li>
-          <li>✅ Frontend + Backend</li>
-          <li>✅ Free Subdomain</li>
-          <li>✅ Backend Deployment</li>
-          <li>❌ Custom Domain</li>
-          <li>❌ CI/CD Pipeline</li>
+          <li class="has"><span class="feat-icon">✅</span> Render / Railway / Vercel</li>
+          <li class="has"><span class="feat-icon">✅</span> Frontend + Backend</li>
+          <li class="has"><span class="feat-icon">✅</span> Free Subdomain</li>
+          <li class="has"><span class="feat-icon">✅</span> Backend Deployment</li>
+          <li><span class="feat-icon">❌</span> Custom Domain</li>
+          <li><span class="feat-icon">❌</span> CI/CD Pipeline</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Deployment%20%E2%82%B9799" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Standard%20Deployment%20%E2%82%B9799" target="_blank" class="btn btn-primary">💬 Get Started</a>
       </div>
-      <div class="price-card">
-        <div class="plan-name">Premium</div>
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="plan-tier">Premium</div>
         <div class="plan-price">₹1,499</div>
         <div class="plan-desc">Production-ready deployment</div>
         <ul class="plan-features">
-          <li>✅ AWS / GCP / Azure</li>
-          <li>✅ Frontend + Backend + DB</li>
-          <li>✅ Custom Domain + SSL</li>
-          <li>✅ Full Cloud Setup</li>
-          <li>✅ CI/CD Pipeline</li>
-          <li>✅ 1 Month Support</li>
+          <li class="has"><span class="feat-icon">✅</span> AWS / GCP / Azure</li>
+          <li class="has"><span class="feat-icon">✅</span> Frontend + Backend + DB</li>
+          <li class="has"><span class="feat-icon">✅</span> Custom Domain + SSL</li>
+          <li class="has"><span class="feat-icon">✅</span> Full Cloud Setup</li>
+          <li class="has"><span class="feat-icon">✅</span> CI/CD Pipeline</li>
+          <li class="has"><span class="feat-icon">✅</span> 1 Month Support</li>
         </ul>
-        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Deployment%20%E2%82%B91499" target="_blank" class="btn btn-whatsapp">💬 Get Started</a>
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20want%20Premium%20Deployment%20%E2%82%B91499" target="_blank" class="btn btn-ghost">💬 Get Started</a>
       </div>
     </div>
 
-    <p class="pricing-note">💡 Prices are negotiable based on your requirements. Message us on WhatsApp for a custom quote!</p>
-  </section>
+    <p class="pricing-note" data-aos="fade-up">💡 Prices are negotiable based on your requirements. Message us on WhatsApp for a custom quote!</p>
+  </div>
+</section>
 
-  <!-- CONTACT FORM -->
-  <section class="contact-section" id="contact">
-    <div class="section-label">Get In Touch</div>
-    <h2>Send Us Your Requirement</h2>
-    <p class="contact-sub">Fill the form below — it will open WhatsApp with all your details pre-filled. We'll reply within hours!</p>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-head" data-aos="fade-up">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Send Us Your Requirement</h2>
+      <p class="section-sub">Fill the form below — it will open WhatsApp with all your details pre-filled. We'll reply within hours!</p>
+    </div>
 
     <div class="contact-wrap">
-      <div class="contact-form-box">
+      <div class="contact-form-box" data-aos="fade-right">
         <div class="form-group">
           <label>Your Name *</label>
           <input type="text" id="cf-name" placeholder="e.g. Rahul Sharma" />
@@ -428,99 +553,78 @@
         </button>
         <p class="form-note">* Required fields. Clicking the button opens WhatsApp with your details.</p>
         <div class="contact-alts">
-          <a href="https://www.instagram.com/aknextgen.tech?igsh=MXMxcmVpc2I1MmY3Ng==" target="_blank" class="btn btn-instagram">📸 Instagram</a>
-          <a href="/cdn-cgi/l/email-protection#e1808a8f84999586848f95848289d7d2d8d2a1868c80888dcf828e8c" class="btn btn-email">✉️ Email Us</a>
+          <a href="https://www.instagram.com/aknextgen.tech/" target="_blank" class="btn btn-instagram">📸 Instagram</a>
+          <a href="mailto:aknextgentech6393@gmail.com" class="btn btn-email">✉️ Email Us</a>
         </div>
       </div>
 
-      <div class="contact-info-box">
-        <h3>Why reach out?</h3>
-        <div class="cinfo-item">📦 Tell us your idea — we plan everything for you</div>
-        <div class="cinfo-item">⚡ Get a reply within 2–3 hours on WhatsApp</div>
-        <div class="cinfo-item">💰 Fair quote based on your exact needs</div>
-        <div class="cinfo-item">🎓 Special discounts for group orders</div>
-        <div class="contact-direct">
-          <p class="direct-label">Or message directly:</p>
-          <button class="btn btn-whatsapp large" onclick="sendToWhatsApp()">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          In WhatsApp
-        </button>
+      <div class="contact-info-box" data-aos="fade-left">
+        <div class="info-card">
+          <h3>Why Reach Out?</h3>
+          <div class="cinfo-item"><span class="cinfo-emoji">📦</span> Tell us your idea — we plan everything for you</div>
+          <div class="cinfo-item"><span class="cinfo-emoji">⚡</span> Get a reply within 2–3 hours on WhatsApp</div>
+          <div class="cinfo-item"><span class="cinfo-emoji">💰</span> Fair quote based on your exact needs</div>
+          <div class="cinfo-item"><span class="cinfo-emoji">🎓</span> Special discounts for group orders</div>
+        </div>
+        <div class="info-card">
+          <div class="contact-direct">
+            <span class="direct-label">Or message directly:</span>
+            <button class="btn btn-whatsapp large" style="width:100%;justify-content:center" onclick="window.open('https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance','_blank')">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              In WhatsApp   
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Ready to build something great?</h2>
-    <p>Reach out now — we'll get back to you within hours.</p>
-    <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance" target="_blank" class="btn btn-whatsapp large">
-      💬 Chat on WhatsApp
-    </a>
-  </section>
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-card" data-aos="zoom-in">
+      <div class="section-eyebrow" style="justify-content:center">Ready to Start?</div>
+      <h2>Build Something<br><span class="gradient-text">Great Together.</span></h2>
+      <p>Reach out now — we'll get back to you within hours.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/916381084514?text=Hi%20AK%20Next%20Gen%20Tech%2C%20I%20need%20project%20guidance" target="_blank" class="btn btn-whatsapp large">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <a href="https://www.instagram.com/aknextgen.tech/" target="_blank" class="btn btn-instagram large">📸 Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">AK Next Gen <span>Tech</span></div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      AK Next Gen <span>Tech</span>
+    </div>
+    <nav class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;gap:10px;">
+      <a href="https://www.instagram.com/aknextgen.tech/" target="_blank" class="btn btn-instagram" style="padding:10px 16px;font-size:13px;">📸 Instagram</a>
+      <a href="https://wa.me/916381084514" target="_blank" class="btn btn-whatsapp" style="padding:10px 16px;font-size:13px;">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <p>© 2026 AK Next Gen Tech. All Rights Reserved.</p>
-  </footer>
+    <span class="footer-badge">BUILT FOR STUDENTS · POWERED BY PROFESSIONALS</span>
+  </div>
+</footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    var WA_NUMBER = "916381084514";
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    /* ---- Hamburger ---- */
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('open');
-      document.getElementById('hamburger').classList.toggle('open');
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          document.getElementById('nav-links').classList.remove('open');
-          document.getElementById('hamburger').classList.remove('open');
-        });
-      });
-    });
-
-    /* ---- Pricing Tabs ---- */
-    function showCategory(id, btn) {
-      document.querySelectorAll('.pricing-grid').forEach(function(g){ g.classList.remove('active'); });
-      document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
-      document.getElementById('cat-' + id).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    /* ---- Contact Form → WhatsApp ---- */
-    function sendToWhatsApp() {
-      var name     = document.getElementById('cf-name').value.trim();
-      var phone    = document.getElementById('cf-phone').value.trim();
-      var college  = document.getElementById('cf-college').value.trim();
-      var course   = document.getElementById('cf-course').value.trim();
-      var service  = document.getElementById('cf-service').value;
-      var deadline = document.getElementById('cf-deadline').value;
-      var budget   = document.getElementById('cf-budget').value.trim();
-      var message  = document.getElementById('cf-message').value.trim();
-
-      if (!name || !college || !course || !service || !message) {
-        alert('⚠️ Please fill in all required fields (marked with *).');
-        return;
-      }
-
-      var text =
-        "🎓 *New Enquiry – AK Next Gen Tech*\n\n" +
-        "👤 *Name:* "          + name    + "\n" +
-        (phone    ? "📱 *Phone:* "    + phone    + "\n" : "") +
-        "🏫 *College:* "       + college + "\n" +
-        "📚 *Course & Year:* " + course  + "\n" +
-        "🛠️ *Service:* "       + service + "\n" +
-        (deadline ? "📅 *Deadline:* " + deadline + "\n" : "") +
-        (budget   ? "💰 *Budget:* "   + budget   + "\n" : "") +
-        "💬 *Details:* "       + message + "\n\n" +
-        "Please help me with my project!";
-
-      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text), '_blank');
-    }
-  </script>
+<script src="script.js" defer></script>
 </body>
 </html>
-
